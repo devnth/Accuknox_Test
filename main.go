@@ -109,7 +109,7 @@ func GetTopThree() (int, int, int) {
 	for key := range logData {
 
 		count := logData[key].Len()
-		fmt.Printf("Food id: %s, count: %d\n", key, logData[key].Len())
+		// fmt.Printf("Food id: %s, count: %d\n", key, logData[key].Len())
 		if top < count {
 			third = second
 			second = top
@@ -133,5 +133,6 @@ func printFoodName(rank int) {
 			fmt.Printf(" %s\t", foodMap[key])
 		}
 	}
-	fmt.Println("---", rank)
+	fmt.Println()
+	// fmt.Println("---", rank)
 }
