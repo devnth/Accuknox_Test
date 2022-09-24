@@ -1,12 +1,12 @@
 # Program to find top three foods in a restaurant
 
 Program reads data from text files and store them in hashmap data type in key value list pairs. From that hashmap it calculates the length of the list and prints the corresponding top three food name. 
-It has three functions to get the desired output.
+It has four functions to get the desired output.
 
 
 
 
-## The three functions
+## The four functions
 -  getLogData: To read and store data from the restaurant log file in hashmap structuture type with foodmenu_id as key and eater_id as list of values. It also checks whether the diner has taken the same food twice and returns error for the same.
 
 -  getfoodMenu: To read and store the foodmenu_id and food names from the file and store in hashmap structure with foodmenu_id as key and food name as value.
