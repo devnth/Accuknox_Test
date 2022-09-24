@@ -34,18 +34,10 @@ anu23: alf260, ic60, fl60
 ```
 
 The output:
-```Food id: ic60, count: 5
-Food id: md250, count: 2
-Food id: fl60, count: 2
-Food id: dos36, count: 1
-Food id: alf260, count: 4
-Food id: cb100, count: 4
-Food id: lj20, count: 7
-
-
-First:  Lime Juice      --- 7
-Second:  Icecream       --- 5
-Third:  AlFaham  Chicken Biriyani       --- 4
+```
+First:  Lime Juice
+Second:  Icecream
+Third:  AlFaham  Chicken Biriyani
 ```
 
 ##  Example 2 (Error)
