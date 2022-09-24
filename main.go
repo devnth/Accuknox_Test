@@ -14,20 +14,24 @@ var foodMap = make(map[string]string)
 
 func main() {
 
+	//reads data from log file
 	err := getLogData("restaurantLog1")
 	if err != nil {
 		fmt.Printf("Error Reading Log File, Error: %s", err.Error())
 	}
 
+	// reads data from foodmenu file
 	err = getFoodMenu("foodmenu")
 	if err != nil {
 		fmt.Printf("Error Reading Food Menu File, Error: %s", err.Error())
 	}
 
+	//finds the top three
 	top, second, third := GetTopThree()
 
 	fmt.Println()
 
+	//prints the name of top three foods
 	fmt.Print("First: ")
 	printFoodName(top)
 
@@ -39,6 +43,7 @@ func main() {
 
 }
 
+// reads data from text file
 func getLogData(fileName string) error {
 
 	file, err := os.Open(fileName)
@@ -53,6 +58,7 @@ func getLogData(fileName string) error {
 	bufferedData.Scan()
 	for bufferedData.Scan() {
 
+		//to split string
 		data := strings.Split(bufferedData.Text(), ": ")
 		eater_id := data[0]
 		food_ids := strings.Split(data[1], ", ")
@@ -65,6 +71,7 @@ func getLogData(fileName string) error {
 				logData[key] = list.New()
 			}
 
+			// to check whether diner has taken the food more than once
 			for e := logData[key].Front(); e != nil; e = e.Next() {
 
 				if e.Value == eater_id {
@@ -77,6 +84,7 @@ func getLogData(fileName string) error {
 	return nil
 }
 
+// to read food mennu data from text file
 func getFoodMenu(fileName string) error {
 
 	file, err := os.Open(fileName)
@@ -102,6 +110,7 @@ func getFoodMenu(fileName string) error {
 	return nil
 }
 
+// finds the top three foods
 func GetTopThree() (int, int, int) {
 
 	var top, second, third int
@@ -125,6 +134,7 @@ func GetTopThree() (int, int, int) {
 	return top, second, third
 }
 
+// prints the name of the food
 func printFoodName(rank int) {
 
 	for key := range logData {
